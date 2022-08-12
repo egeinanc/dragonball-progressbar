@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.egeinanc.dbzprogressbar.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.egeinanc.dbzprogressbar.MyBundle
 
 class MyApplicationService {
 
