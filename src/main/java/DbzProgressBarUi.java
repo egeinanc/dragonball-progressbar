@@ -22,6 +22,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         Icon icon = new ImageIcon(DbzProgressBarUi.class.getResource("supersayjan.gif"));
         icon.paintIcon(progressBar, g, 0, 0);
 
+        progressBar.setPreferredSize(new Dimension(progressBar.getWidth(), 30));
 
         progressBar.setForeground(JBColor.YELLOW);
 
