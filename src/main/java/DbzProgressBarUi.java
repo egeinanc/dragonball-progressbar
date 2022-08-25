@@ -19,13 +19,11 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
             super.paintIndeterminate(g, c);
         }
 
-        Icon icon = new ImageIcon(DbzProgressBarUi.class.getResource("goku2.png"));
+        Icon icon = new ImageIcon(DbzProgressBarUi.class.getResource("supersayjan.gif"));
         icon.paintIcon(progressBar, g, 0, 0);
 
-        System.out.println(progressBar.getHeight());
-        System.out.println(progressBar.getWidth());
-        progressBar.setBorder(BorderFactory.createLineBorder(JBColor.YELLOW));
-        progressBar.setForeground(JBColor.CYAN);
+
+        progressBar.setForeground(JBColor.YELLOW);
 
     }
 
