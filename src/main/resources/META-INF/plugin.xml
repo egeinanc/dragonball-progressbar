@@ -1,18 +1,17 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.egeinanc.dbzprogressbar</id>
-    <name>dbz-progressbar</name>
+    <name>Dbz-Progressbar</name>
     <vendor>egeinanc</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.egeinanc.dbzprogressbar.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.egeinanc.dbzprogressbar.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.egeinanc.dbzprogressbar.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="DbzProgressbarListener"
+                  topic="com.intellij.ide.ui.LafManagerListener"/>
     </applicationListeners>
+
 </idea-plugin>
