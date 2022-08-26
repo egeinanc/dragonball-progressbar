@@ -1,6 +1,7 @@
 import com.intellij.ui.JBColor;
 import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.JBUI;
+import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -20,14 +21,16 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
     private void paint(Graphics g, JComponent c, boolean determinate) {
         if (determinate) {
             super.paintDeterminate(g, c);
+            Icon icon = new ImageIcon(getClass().getResource("goku_kamehameha.gif"));
+            icon.paintIcon(progressBar, g, 0, 0);
         } else {
             super.paintIndeterminate(g, c);
+            Icon icon = new ImageIcon(getClass().getResource("goku_ki.gif"));
+            icon.paintIcon(progressBar, g, 0, 0);
         }
 
-        Icon icon = new ImageIcon(getClass().getResource("load_kamehameha.gif"));
-        icon.paintIcon(progressBar, g, -10, 0);
 
-        progressBar.setForeground(JBColor.CYAN);
+        progressBar.setForeground(UIUtil.getBoundsColor());
 
         // border
         final int width = progressBar.getWidth();
@@ -71,7 +74,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     @Override
     public Dimension getPreferredSize(final JComponent c) {
-        return new Dimension(super.getPreferredSize(c).width, 50);
+        return new Dimension(super.getPreferredSize(c).width, 75);
     }
 
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
