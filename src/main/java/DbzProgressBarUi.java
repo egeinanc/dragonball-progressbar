@@ -19,17 +19,14 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
     private void paint(Graphics g, JComponent c, boolean determinate) {
         if (determinate) {
             super.paintDeterminate(g, c);
-            Icon icon = new ImageIcon(getClass().getResource("beams.gif"));
-            icon.paintIcon(progressBar, g, 0, 0);
-
         } else {
             super.paintIndeterminate(g, c);
-            Icon icon = new ImageIcon(getClass().getResource("supersayjan.gif"));
-            icon.paintIcon(progressBar, g, 0, 0);
         }
 
+        Icon icon = new ImageIcon(getClass().getResource("load_kamehameha.gif"));
+        icon.paintIcon(progressBar, g, -10, 0);
 
-        progressBar.setForeground(JBColor.YELLOW);
+        progressBar.setForeground(JBColor.CYAN);
 
         // border
         final int width = progressBar.getWidth();
