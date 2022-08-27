@@ -79,7 +79,6 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
     public static ComponentUI createUI(final JComponent c) {
-        c.setBorder(JBUI.Borders.empty().asUIResource());
         return new DbzProgressBarUi();
     }
 
