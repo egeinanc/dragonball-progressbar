@@ -6,6 +6,9 @@
 
 This plugin is made for fun and is still WIP (26.08.2022). All sprites belong to: https://www.spriters-resource.com
 
+Icon source: https://de.m.wikipedia.org/wiki/Datei:Dragonball_%284-Star%29.svg
+
+
 <!-- Plugin description -->
 This plugin replaces the progressbar with a dragonball themed progressbar.
 
