@@ -12,11 +12,6 @@ import java.awt.geom.Point2D;
 import java.awt.geom.RoundRectangle2D;
 
 public class DbzProgressBarUi extends BasicProgressBarUI {
-    private ImageIcon icon;
-
-    public DbzProgressBarUi() {
-
-    }
 
     private void paint(Graphics g, JComponent c, boolean determinate) {
         if (determinate) {
