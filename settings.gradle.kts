@@ -1,1 +1,1 @@
-rootProject.name = "dbz-progressbar"
+rootProject.name = "dragonball-progressbar"
