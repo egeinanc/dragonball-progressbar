@@ -15,19 +15,17 @@ This plugin replaces the progressbar with a dragonball themed progressbar.
 <!-- Plugin description end -->
 
 ## Currently existing sprites (not all of them are used)
-![](src/main/resources/beams.gif)
-
-![](src/main/resources/supersayjan_2.gif)
-
-![](src/main/resources/supersayjan.gif)
-
 
 ![](src/main/resources/load_kamehameha.gif)
+
 
 ![](src/main/resources/goku_ki.gif)
 
 ![](src/main/resources/goku_kamehameha.gif)
 
+![](src/main/resources/vegeta_final_flash.gif)
+
+![](src/main/resources/jindujun.png)
 
 ## Installation
 
