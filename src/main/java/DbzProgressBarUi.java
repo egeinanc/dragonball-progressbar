@@ -48,12 +48,6 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
         progressBar.setForeground(UIUtil.getBoundsColor());
 
-        // border
-        final int width = progressBar.getWidth();
-        int height = progressBar.getPreferredSize().height;
-
-        drawBorder((Graphics2D) g, width, height);
-
     }
 
     @Override
