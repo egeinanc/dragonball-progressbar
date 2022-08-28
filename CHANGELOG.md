@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# dbz-progressbar Changelog
+# dragonball-progressbar Changelog
 
 ## [Unreleased]
 
