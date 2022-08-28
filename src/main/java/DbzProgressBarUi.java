@@ -65,7 +65,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     @Override
     public Dimension getPreferredSize(final JComponent c) {
-        return new Dimension(super.getPreferredSize(c).width, 75);
+        return new Dimension(400, 75);
     }
 
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
