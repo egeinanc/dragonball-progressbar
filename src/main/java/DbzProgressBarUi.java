@@ -39,8 +39,11 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
     @Override
     protected void paintIndeterminate(Graphics g, JComponent c) {
         super.paintIndeterminate(g, c);
-        Icon icon = new ImageIcon(getClass().getResource("goku_ki.gif"));
-        icon.paintIcon(progressBar, g, 0, 0);
+        Icon sonGoku = new ImageIcon(getClass().getResource("goku_kamehameha.gif"));
+        sonGoku.paintIcon(progressBar, g, 0, 0);
+
+        Icon vegeta = new ImageIcon(getClass().getResource("vegeta_final_flash.gif"));
+        vegeta.paintIcon(progressBar, g, progressBar.getWidth() - vegeta.getIconWidth(), 0);
 
 
         progressBar.setForeground(UIUtil.getBoundsColor());
@@ -49,7 +52,9 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         final int width = progressBar.getWidth();
         int height = progressBar.getPreferredSize().height;
 
-        drawBorder((Graphics2D) g, width, height);    }
+        drawBorder((Graphics2D) g, width, height);
+
+    }
 
     @Override
     protected void paintDeterminate(Graphics g, JComponent c) {
