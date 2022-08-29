@@ -1,15 +1,9 @@
-import com.intellij.ui.JBColor;
-import com.intellij.ui.scale.JBUIScale;
-import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
-import java.awt.geom.Point2D;
-import java.awt.geom.RoundRectangle2D;
 
 public class DbzProgressBarUi extends BasicProgressBarUI {
 
