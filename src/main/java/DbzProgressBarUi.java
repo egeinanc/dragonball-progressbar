@@ -13,29 +13,6 @@ import java.awt.geom.RoundRectangle2D;
 
 public class DbzProgressBarUi extends BasicProgressBarUI {
 
-    private void drawBorder(Graphics2D g, int width, int height) {
-        RoundRectangle2D rectangle = getRoundRectangle(width, height);
-
-        final Color color = g.getColor();
-        final Stroke stroke = g.getStroke();
-
-        g.setColor(progressBar.getForeground());
-        g.setStroke(new BasicStroke(2));
-        g.draw(rectangle);
-
-        g.setColor(color);
-        g.setStroke(stroke);
-    }
-
-
-    @NotNull
-    private RoundRectangle2D getRoundRectangle(final int width, final int height) {
-        final float arcLength = JBUIScale.scale(9f);
-        final float offset = JBUIScale.scale(2f);
-
-        return new RoundRectangle2D.Float(JBUIScale.scale(1f), JBUIScale.scale(1f), width - offset, height - offset, arcLength, arcLength);
-    }
-
     @Override
     protected void paintIndeterminate(Graphics g, JComponent c) {
         super.paintIndeterminate(g, c);
