@@ -4,13 +4,18 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/19789.svg)](https://plugins.jetbrains.com/plugin/19789)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/19789.svg)](https://plugins.jetbrains.com/plugin/19789)
 
-This plugin is made for fun and is still WIP (26.08.2022). All sprites belong to: https://www.spriters-resource.com
+This plugin is made for fun and is still WIP (07.09.2022).
+
+Sprites belong to: 
+* https://www.spriters-resource.com
+* https://www.deviantart.com/tag/gokusprites
+* https://slackmojis.com/
 
 Icon source: https://de.m.wikipedia.org/wiki/Datei:Dragonball_%284-Star%29.svg
 
 
 <!-- Plugin description -->
-This plugin replaces the progressbar with a dragonball themed progressbar.
+This plugin replaces the progressbar with a dragonball themed progressbar. Feel free to leave GitHub issues :)
 
 <!-- Plugin description end -->
 
@@ -27,12 +32,15 @@ This plugin replaces the progressbar with a dragonball themed progressbar.
 
 ![](src/main/resources/jindujun.png)
 
+![](src/main/resources/kamehameha.gif)
+
+![](src/main/resources/goku_run.gif)
+
 ## Installation
 
 - Using IDE built-in plugin system:
 
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "
-  dragonball-progressbar"</kbd> >
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "dragonball-progressbar"</kbd> >
   <kbd>Install Plugin</kbd>
 
 - Manually:
