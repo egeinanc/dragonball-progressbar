@@ -52,7 +52,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
     public static ComponentUI createUI(final JComponent c) {
         Sprite detSprite = Sprite.GOKU_RUNNING;
-        Sprite inDetSprite = Sprite.GOKU_KAMEHAMEHA;
+        Sprite inDetSprite = Sprite.GOKU_KAMEHAMEHA_SMALL;
 
         return new DbzProgressBarUi(detSprite, inDetSprite);
     }
