@@ -20,7 +20,7 @@ public class DbProgressConfigurationComponent {
         ButtonGroup determinateGroup = new ButtonGroup();
         ButtonGroup inDeterminateGroup = new ButtonGroup();
 
-        mainPanel.add(new JLabel("Deerminate Sprites:"));
+        mainPanel.add(new JLabel("Determinate Sprites:"));
 
         List<Sprite> determinateSprites = Arrays.stream(Sprite.values()).filter(Sprite::isDeterminate).collect(Collectors.toList());
         createJRadioButtons(determinateGroup, determinateSprites);

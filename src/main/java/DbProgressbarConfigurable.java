@@ -1,6 +1,4 @@
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.util.NlsContexts;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,11 +23,16 @@ public class DbProgressbarConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return false;
+        return true;
     }
 
     @Override
-    public void apply() throws ConfigurationException {
+    public void apply() {
+        System.out.println("apply2");
+        DbProgressbarState state = DbProgressbarState.getInstance();
+
+        boolean selected = ((JRadioButton) ((JPanel) component.getMainPanel().getComponent(1)).getComponent(0)).isSelected();
+        System.out.println(selected);
 
     }
 }

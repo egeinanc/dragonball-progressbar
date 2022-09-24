@@ -8,10 +8,12 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable
-                                 instance="DbProgressbarConfigurable"
-                                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
-                                 dynamic="true"
-                                 displayName="Dragonball Progress Bar" />
+                instance="DbProgressbarConfigurable"
+                id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                dynamic="true"
+                displayName="Dragonball Progress Bar"/>
+        <applicationService
+                serviceImplementation="DbProgressbarState"/>
     </extensions>
 
     <applicationListeners>
