@@ -1,9 +1,6 @@
-import jdk.jfr.SettingDefinition;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,29 +20,31 @@ public class DbProgressConfigurationComponent {
         ButtonGroup determinateGroup = new ButtonGroup();
         ButtonGroup inDeterminateGroup = new ButtonGroup();
 
-
         mainPanel.add(new JLabel("Deerminate Sprites:"));
 
         List<Sprite> determinateSprites = Arrays.stream(Sprite.values()).filter(Sprite::isDeterminate).collect(Collectors.toList());
-
-        determinateSprites.forEach(sprite -> {
-            JRadioButton radioButton = new JRadioButton(sprite.toString());
-            determinateGroup.add(radioButton);
-            mainPanel.add(radioButton);
-        });
+        createJRadioButtons(determinateGroup, determinateSprites);
 
         mainPanel.add(new JLabel("Indeterminate Sprites:"));
 
         List<Sprite> inDeterminateSprites = Arrays.stream(Sprite.values()).filter(sprite -> !sprite.isDeterminate()).collect(Collectors.toList());
-        inDeterminateSprites.forEach(sprite -> {
-            JRadioButton radioButton = new JRadioButton(sprite.toString());
-            inDeterminateGroup.add(radioButton);
-            mainPanel.add(radioButton);
-
-        });
-
+        createJRadioButtons(inDeterminateGroup, inDeterminateSprites);
 
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+    }
+
+    private void createJRadioButtons(ButtonGroup buttonGroup, List<Sprite> spriteList) {
+        spriteList.forEach(sprite -> {
+            JPanel iconPanel = new JPanel();
+            iconPanel.setLayout(new BoxLayout(iconPanel, BoxLayout.LINE_AXIS));
+            JRadioButton radioButton = new JRadioButton();
+            JLabel icon = new JLabel(sprite.getIcon());
+            buttonGroup.add(radioButton);
+            iconPanel.add(radioButton);
+            iconPanel.add(icon);
+
+            mainPanel.add(iconPanel);
+        });
     }
 
 
