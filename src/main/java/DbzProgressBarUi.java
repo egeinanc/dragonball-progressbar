@@ -16,6 +16,21 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         this.height = Math.max(determinateSprite.getIcon().getIconHeight(), inDeterminateSprite.getIcon().getIconHeight());
     }
 
+    public static URL getResource(String name) {
+        return DbzProgressBarUi.class.getResource(name);
+    }
+
+    @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
+    public static ComponentUI createUI(final JComponent c) {
+        var wrapper = new Object() {
+            final Sprite determinateSprite = Sprite.GOKU_RUNNING;
+            final Sprite indeterminateSprite = Sprite.GOKU_KAMEHAMEHA_SMALL;
+
+        };
+
+        return new DbzProgressBarUi(wrapper.determinateSprite, wrapper.indeterminateSprite);
+    }
+
     @Override
     protected void paintIndeterminate(Graphics g, JComponent c) {
         super.paintIndeterminate(g, c);
@@ -40,21 +55,9 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     }
 
-    public static URL getResource(String name) {
-        return DbzProgressBarUi.class.getResource(name);
-    }
-
     @Override
     public Dimension getPreferredSize(final JComponent c) {
         return new Dimension(400, height);
-    }
-
-    @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
-    public static ComponentUI createUI(final JComponent c) {
-        Sprite detSprite = Sprite.GOKU_RUNNING;
-        Sprite inDetSprite = Sprite.GOKU_KAMEHAMEHA_SMALL;
-
-        return new DbzProgressBarUi(detSprite, inDetSprite);
     }
 
 }

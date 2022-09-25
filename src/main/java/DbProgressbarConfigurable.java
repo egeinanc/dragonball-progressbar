@@ -23,16 +23,20 @@ public class DbProgressbarConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return true;
+
+        // todo fix
+        DbProgressbarState state = DbProgressbarState.getInstance();
+        System.out.println((component.getSpriteState() != state.getSpriteState()));
+        return component.getSpriteState() != state.getSpriteState();
     }
 
     @Override
     public void apply() {
-        System.out.println("apply2");
+
+        // todo fix
+        System.out.println("apply");
         DbProgressbarState state = DbProgressbarState.getInstance();
 
-        boolean selected = ((JRadioButton) ((JPanel) component.getMainPanel().getComponent(1)).getComponent(0)).isSelected();
-        System.out.println(selected);
-
+        state.setSpriteState(component.getSpriteState());
     }
 }

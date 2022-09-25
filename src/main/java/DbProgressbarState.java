@@ -8,7 +8,8 @@ import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @State(
         name = "DbProgressState",
@@ -17,8 +18,8 @@ import java.util.List;
 @Getter
 @Setter
 public class DbProgressbarState implements PersistentStateComponent<DbProgressbarState> {
-    private List<Sprite> indeterminateSprites;
-    private List<Sprite> determinateSprites;
+
+    private Map<Sprite, Boolean> spriteState = new HashMap<>();
 
     public static DbProgressbarState getInstance() {
         return ApplicationManager.getApplication().getService(DbProgressbarState.class);
