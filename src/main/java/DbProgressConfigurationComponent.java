@@ -2,10 +2,8 @@ import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Getter
@@ -23,7 +21,16 @@ public class DbProgressConfigurationComponent {
     public static void syncState() {
         DbProgressbarState state = DbProgressbarState.getInstance();
         for (Sprite sprite : Sprite.values()) {
+            // insert into state a possible new value
             state.getSpriteState().computeIfAbsent(sprite, Sprite::getDefaultSelected);
+        }
+
+        // remove all keys of state which are not available
+        for (Sprite sprite : new ArrayList<>(state.getSpriteState().keySet())) {
+            List<Sprite> sprites = Arrays.asList(Sprite.values());
+            if (!sprites.contains(sprite)) {
+                state.getSpriteState().remove(sprite);
+            }
         }
     }
 
@@ -56,6 +63,7 @@ public class DbProgressConfigurationComponent {
 
             JRadioButton radioButton = new JRadioButton();
             radioButton.setSelected(state.getSpriteState().get(sprite));
+            spriteState.put(sprite, state.getSpriteState().get(sprite));
             radioButton.addActionListener(l -> {
 
                 spriteList.forEach(s -> spriteState.put(s, false));
