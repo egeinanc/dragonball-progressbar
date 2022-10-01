@@ -16,6 +16,41 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         this.height = Math.max(determinateSprite.getIcon().getIconHeight(), inDeterminateSprite.getIcon().getIconHeight());
     }
 
+    public static URL getResource(String name) {
+        return DbzProgressBarUi.class.getResource(name);
+    }
+
+    @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
+    public static ComponentUI createUI(final JComponent c) {
+
+        DbProgressConfigurationComponent.syncState();
+
+        boolean determinateIsSet = false;
+        boolean inDeterminateIsSet = false;
+        Sprite determinateSprite = Sprite.GOKU_JINDUJUN;
+        Sprite indeterminateSprite = Sprite.GOKU_KAMEHAMEHA_SMALL;
+
+        DbProgressbarState state = DbProgressbarState.getInstance();
+        for (Sprite sprite : Sprite.values()) {
+
+            if (determinateIsSet && inDeterminateIsSet) break;
+
+            Boolean stateValue = state.getSpriteState().get(sprite);
+
+            if (sprite.isDeterminate() && stateValue && !determinateIsSet) {
+                determinateSprite = sprite;
+                determinateIsSet = true;
+            }
+
+            if (!sprite.isDeterminate() && stateValue && !inDeterminateIsSet) {
+                indeterminateSprite = sprite;
+                inDeterminateIsSet = true;
+            }
+        }
+
+        return new DbzProgressBarUi(determinateSprite, indeterminateSprite);
+    }
+
     @Override
     protected void paintIndeterminate(Graphics g, JComponent c) {
         super.paintIndeterminate(g, c);
@@ -40,21 +75,9 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     }
 
-    public static URL getResource(String name) {
-        return DbzProgressBarUi.class.getResource(name);
-    }
-
     @Override
     public Dimension getPreferredSize(final JComponent c) {
         return new Dimension(400, height);
-    }
-
-    @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
-    public static ComponentUI createUI(final JComponent c) {
-        Sprite detSprite = Sprite.GOKU_RUNNING;
-        Sprite inDetSprite = Sprite.GOKU_KAMEHAMEHA;
-
-        return new DbzProgressBarUi(detSprite, inDetSprite);
     }
 
 }

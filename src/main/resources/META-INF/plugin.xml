@@ -7,6 +7,14 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable
+                parentId="appearance"
+                instance="DbProgressbarConfigurable"
+                id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                dynamic="true"
+                displayName="Dragonball Progress Bar"/>
+        <applicationService
+                serviceImplementation="DbProgressbarState"/>
     </extensions>
 
     <applicationListeners>
