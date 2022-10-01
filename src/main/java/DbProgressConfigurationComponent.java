@@ -2,8 +2,10 @@ import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.*;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Getter
@@ -13,17 +15,15 @@ public class DbProgressConfigurationComponent {
     private JPanel mainPanel;
 
     public DbProgressConfigurationComponent() {
-        defaultSpriteState();
+        syncState();
         createUI();
 
     }
 
-    private void defaultSpriteState() {
+    public static void syncState() {
         DbProgressbarState state = DbProgressbarState.getInstance();
-        Arrays.stream(Sprite.values()).forEach(sprite -> spriteState.put(sprite, sprite.getSelected()));
-        if (state.getSpriteState().isEmpty()) {
-            new ArrayList<>(state.getSpriteState().keySet()).forEach(sprite -> spriteState.put(sprite, sprite.getSelected()));
-            state.setSpriteState(spriteState);
+        for (Sprite sprite : Sprite.values()) {
+            state.getSpriteState().computeIfAbsent(sprite, Sprite::getDefaultSelected);
         }
     }
 

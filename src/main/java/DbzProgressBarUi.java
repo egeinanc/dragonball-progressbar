@@ -22,18 +22,29 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     @SuppressWarnings({"MethodOverridesStaticMethodOfSuperclass", "UnusedDeclaration"})
     public static ComponentUI createUI(final JComponent c) {
+
+        DbProgressConfigurationComponent.syncState();
+
+        boolean determinateIsSet = false;
+        boolean inDeterminateIsSet = false;
         Sprite determinateSprite = Sprite.GOKU_JINDUJUN;
         Sprite indeterminateSprite = Sprite.GOKU_KAMEHAMEHA_SMALL;
 
         DbProgressbarState state = DbProgressbarState.getInstance();
         for (Sprite sprite : Sprite.values()) {
+
+            if (determinateIsSet && inDeterminateIsSet) break;
+
             Boolean stateValue = state.getSpriteState().get(sprite);
-            if (sprite.isDeterminate() && stateValue) {
+
+            if (sprite.isDeterminate() && stateValue && !determinateIsSet) {
                 determinateSprite = sprite;
+                determinateIsSet = true;
             }
 
-            if (!sprite.isDeterminate() && stateValue) {
+            if (!sprite.isDeterminate() && stateValue && !inDeterminateIsSet) {
                 indeterminateSprite = sprite;
+                inDeterminateIsSet = true;
             }
         }
 
