@@ -47,13 +47,15 @@ public class DbProgressConfigurationComponent {
     }
 
     private void createJRadioButtons(ButtonGroup buttonGroup, List<Sprite> spriteList) {
+        DbProgressbarState state = DbProgressbarState.getInstance();
+
         spriteList.forEach(sprite -> {
             JPanel iconPanel = new JPanel();
 
             iconPanel.setLayout(new BoxLayout(iconPanel, BoxLayout.LINE_AXIS));
 
             JRadioButton radioButton = new JRadioButton();
-            radioButton.setSelected(sprite.getSelected());
+            radioButton.setSelected(state.getSpriteState().get(sprite));
             radioButton.addActionListener(l -> {
 
                 spriteList.forEach(s -> spriteState.put(s, false));
@@ -72,6 +74,4 @@ public class DbProgressConfigurationComponent {
             mainPanel.add(iconPanel);
         });
     }
-
-
 }
