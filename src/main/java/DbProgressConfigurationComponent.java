@@ -20,9 +20,9 @@ public class DbProgressConfigurationComponent {
 
     private void defaultSpriteState() {
         DbProgressbarState state = DbProgressbarState.getInstance();
-        Arrays.stream(Sprite.values()).forEach(sprite -> spriteState.put(sprite, sprite.getDefaultSelected()));
+        Arrays.stream(Sprite.values()).forEach(sprite -> spriteState.put(sprite, sprite.getSelected()));
         if (state.getSpriteState().isEmpty()) {
-            new ArrayList<>(state.getSpriteState().keySet()).forEach(sprite -> spriteState.put(sprite, sprite.getDefaultSelected()));
+            new ArrayList<>(state.getSpriteState().keySet()).forEach(sprite -> spriteState.put(sprite, sprite.getSelected()));
             state.setSpriteState(spriteState);
         }
     }
@@ -53,7 +53,7 @@ public class DbProgressConfigurationComponent {
             iconPanel.setLayout(new BoxLayout(iconPanel, BoxLayout.LINE_AXIS));
 
             JRadioButton radioButton = new JRadioButton();
-            radioButton.setSelected(sprite.getDefaultSelected());
+            radioButton.setSelected(sprite.getSelected());
             radioButton.addActionListener(l -> {
 
                 spriteList.forEach(s -> spriteState.put(s, false));

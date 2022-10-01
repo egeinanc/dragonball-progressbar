@@ -18,6 +18,6 @@ public enum Sprite {
     private final int id;
     private final ImageIcon icon;
     private final boolean isDeterminate;
-    private final Boolean defaultSelected;
+    private final Boolean selected;
 
 }

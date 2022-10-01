@@ -39,7 +39,7 @@ public class DbProgressbarConfigurable implements Configurable {
     @Override
     public void apply() {
         DbProgressbarState state = DbProgressbarState.getInstance();
-        Arrays.stream(Sprite.values()).forEach(sprite ->{
+        Arrays.stream(Sprite.values()).forEach(sprite -> {
             Boolean componentValue = component.getSpriteState().get(sprite);
             state.getSpriteState().put(sprite, componentValue);
         });
