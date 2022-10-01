@@ -3,6 +3,7 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.util.Arrays;
 
 public class DbProgressbarConfigurable implements Configurable {
 
@@ -23,20 +24,24 @@ public class DbProgressbarConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-
-        // todo fix
         DbProgressbarState state = DbProgressbarState.getInstance();
-        System.out.println((component.getSpriteState() != state.getSpriteState()));
-        return component.getSpriteState() != state.getSpriteState();
+        for (Sprite sprite : Sprite.values()) {
+            Boolean componentValue = component.getSpriteState().get(sprite);
+            Boolean stateValue = state.getSpriteState().get(sprite);
+
+            if (componentValue != stateValue) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public void apply() {
-
-        // todo fix
-        System.out.println("apply");
         DbProgressbarState state = DbProgressbarState.getInstance();
-
-        state.setSpriteState(component.getSpriteState());
+        Arrays.stream(Sprite.values()).forEach(sprite ->{
+            Boolean componentValue = component.getSpriteState().get(sprite);
+            state.getSpriteState().put(sprite, componentValue);
+        });
     }
 }
