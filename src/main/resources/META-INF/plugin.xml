@@ -8,6 +8,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable
+                parentId="appearance"
                 instance="DbProgressbarConfigurable"
                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
                 dynamic="true"
