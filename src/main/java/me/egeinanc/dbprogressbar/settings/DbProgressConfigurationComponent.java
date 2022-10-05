@@ -1,4 +1,7 @@
+package me.egeinanc.dbprogressbar.settings;
+
 import lombok.Getter;
+import me.egeinanc.dbprogressbar.model.Sprite;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +25,7 @@ public class DbProgressConfigurationComponent {
         DbProgressbarState state = DbProgressbarState.getInstance();
         for (Sprite sprite : Sprite.values()) {
             // insert into state a possible new value
-            state.getSpriteState().computeIfAbsent(sprite, Sprite::getDefaultSelected);
+            state.getSpriteState().putIfAbsent(sprite, sprite.getDefaultSelected());
         }
 
         // remove all keys of state which are not available

@@ -9,16 +9,16 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable
                 parentId="appearance"
-                instance="DbProgressbarConfigurable"
+                instance="me.egeinanc.dbprogressbar.settings.DbProgressbarConfigurable"
                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
                 dynamic="true"
                 displayName="Dragonball Progress Bar"/>
         <applicationService
-                serviceImplementation="DbProgressbarState"/>
+                serviceImplementation="me.egeinanc.dbprogressbar.settings.DbProgressbarState"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="DbzProgressbarListener"
+        <listener class="me.egeinanc.dbprogressbar.listener.DbzProgressbarListener"
                   topic="com.intellij.ide.ui.LafManagerListener"/>
     </applicationListeners>
 

@@ -1,5 +1,8 @@
+package me.egeinanc.dbprogressbar.listener;
+
 import com.intellij.ide.ui.LafManager;
 import com.intellij.ide.ui.LafManagerListener;
+import me.egeinanc.dbprogressbar.ui.DbzProgressBarUi;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;

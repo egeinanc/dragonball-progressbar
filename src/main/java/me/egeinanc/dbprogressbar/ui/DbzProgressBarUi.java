@@ -1,5 +1,10 @@
+package me.egeinanc.dbprogressbar.ui;
+
 import com.intellij.ui.JBColor;
 import com.intellij.ui.scale.JBUIScale;
+import me.egeinanc.dbprogressbar.model.Sprite;
+import me.egeinanc.dbprogressbar.settings.DbProgressConfigurationComponent;
+import me.egeinanc.dbprogressbar.settings.DbProgressbarState;
 
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;

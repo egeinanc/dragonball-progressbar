@@ -1,5 +1,8 @@
+package me.egeinanc.dbprogressbar.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import me.egeinanc.dbprogressbar.ui.DbzProgressBarUi;
 
 import javax.swing.*;
 

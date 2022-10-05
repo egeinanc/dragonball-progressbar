@@ -1,4 +1,7 @@
+package me.egeinanc.dbprogressbar.settings;
+
 import com.intellij.openapi.options.Configurable;
+import me.egeinanc.dbprogressbar.model.Sprite;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
