@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>me.egeinanc.dbzprogressbar</id>
+    <id>me.egeinanc.dbprogressbar</id>
     <name>Dragonball Progress Bar</name>
     <vendor>egeinanc</vendor>
 
