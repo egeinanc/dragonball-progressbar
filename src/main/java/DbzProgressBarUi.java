@@ -13,7 +13,6 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
     private final Sprite determinateSprite;
     private final Sprite inDeterminateSprite;
     private final int height;
-
     @SuppressWarnings("all")
     private final Color invisibleColor = new Color(0, 0, 0, 0);
 

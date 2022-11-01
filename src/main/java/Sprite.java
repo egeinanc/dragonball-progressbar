@@ -13,6 +13,7 @@ public enum Sprite {
     GOKU_KI_1(5, new ImageIcon(DbzProgressBarUi.getResource("goku_ki.gif")), false, false),
     GOKU_KI_2(6, new ImageIcon(DbzProgressBarUi.getResource("load_kamehameha.gif")), false, false),
     VEGETA_FINAL_FLASH(7, new ImageIcon(DbzProgressBarUi.getResource("vegeta_final_flash.gif")), false, false),
+    GOKU_SSJ(8, new ImageIcon(DbzProgressBarUi.getResource("goku_ssj.gif")), false, false),
     ;
 
     private final int id;
