@@ -38,6 +38,10 @@ In the preferences page there is a new entry to set the desired sprite.
 
 ![](src/main/resources/goku_run.gif)
 
+![](src/main/resources/goku_ssj.gif)
+
+![](src/main/resources/gohan_fight.gif)
+
 ## Installation
 
 - Using IDE built-in plugin system:
