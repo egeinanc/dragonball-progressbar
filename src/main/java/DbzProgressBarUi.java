@@ -83,12 +83,12 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
         int amountFull = getAmountFull(progressBar.getInsets(), progressBar.getWidth(), progressBar.getHeight());
 
-        if (amountFull + imageIcon.getIconWidth() > progressBar.getWidth()) {
-            // rechte ecke vom bild an die rechte ecke von der progressbar
-        }
+        int rightCornerPosition = amountFull - imageIcon.getIconWidth();
+
+        int iconPosition = rightCornerPosition + determinateSprite.getOffset();
 
         int yAxis = height > imageIcon.getIconHeight() ? (height - imageIcon.getIconHeight()) / 2 : 0;
-        imageIcon.paintIcon(progressBar, g, amountFull - determinateSprite.getOffset(), Math.round(yAxis));
+        imageIcon.paintIcon(progressBar, g, iconPosition, Math.round(yAxis));
 
     }
 
