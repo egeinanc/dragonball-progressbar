@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/19789.svg)](https://plugins.jetbrains.com/plugin/19789)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/19789.svg)](https://plugins.jetbrains.com/plugin/19789)
 
-This plugin is made for fun and is still WIP (01.10.2022).
+This plugin is made for fun and is still WIP (05.01.2023).
 
 Sprites belong to: 
 * https://www.spriters-resource.com
