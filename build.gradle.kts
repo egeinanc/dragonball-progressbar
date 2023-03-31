@@ -38,14 +38,6 @@ intellij {
 
 
 tasks {
-    withType<JavaCompile> {
-        sourceCompatibility = "11"
-        targetCompatibility = "11"
-    }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
-    }
-
     patchPluginXml {
         sinceBuild.set("222")
         untilBuild.set("232.*")
