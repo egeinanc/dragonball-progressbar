@@ -1,3 +1,6 @@
+import com.intellij.ui.components.JBLabel;
+import com.intellij.ui.components.JBRadioButton;
+import com.intellij.ui.components.JBTextField;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -10,6 +13,7 @@ import java.util.stream.Collectors;
 public class DbProgressConfigurationComponent {
 
     private final Map<Sprite, Boolean> spriteState = new HashMap<>();
+    private final JBTextField heightField = new JBTextField();
     private JPanel mainPanel;
 
     public DbProgressConfigurationComponent() {
@@ -35,9 +39,14 @@ public class DbProgressConfigurationComponent {
     }
 
     private void createUI() {
+        DbProgressbarState state = DbProgressbarState.getInstance();
         mainPanel = new JPanel();
         ButtonGroup determinateGroup = new ButtonGroup();
         ButtonGroup inDeterminateGroup = new ButtonGroup();
+
+        mainPanel.add(new JBLabel("Height:"));
+        this.heightField.setText(state.getProgressbarHeight().toString());
+        mainPanel.add(this.heightField);
 
         mainPanel.add(new JLabel("Determinate Sprites:"));
 
@@ -61,7 +70,7 @@ public class DbProgressConfigurationComponent {
 
             iconPanel.setLayout(new BoxLayout(iconPanel, BoxLayout.LINE_AXIS));
 
-            JRadioButton radioButton = new JRadioButton();
+            JBRadioButton radioButton = new JBRadioButton();
             radioButton.setSelected(state.getSpriteState().get(sprite));
             spriteState.put(sprite, state.getSpriteState().get(sprite));
             radioButton.addActionListener(l -> {

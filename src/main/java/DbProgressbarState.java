@@ -20,9 +20,14 @@ import java.util.Map;
 public class DbProgressbarState implements PersistentStateComponent<DbProgressbarState> {
 
     private Map<Sprite, Boolean> spriteState = new HashMap<>();
+    private Integer progressbarHeight;
 
     public static DbProgressbarState getInstance() {
         return ApplicationManager.getApplication().getService(DbProgressbarState.class);
+    }
+
+    public Integer getProgressbarHeight() {
+        return progressbarHeight == null ? 42 : progressbarHeight;
     }
 
     @Override
