@@ -44,9 +44,15 @@ public class DbProgressConfigurationComponent {
         ButtonGroup determinateGroup = new ButtonGroup();
         ButtonGroup inDeterminateGroup = new ButtonGroup();
 
-        mainPanel.add(new JBLabel("Height:"));
+        // todo looks like s...
+        JPanel heightPanel = new JPanel();
+        heightPanel.add(new JBLabel("Height:"));
+
         this.heightField.setText(state.getProgressbarHeight().toString());
-        mainPanel.add(this.heightField);
+
+        heightPanel.add(this.heightField);
+        heightPanel.setLayout(new FlowLayout());
+        mainPanel.add(heightPanel);
 
         mainPanel.add(new JLabel("Determinate Sprites:"));
 
@@ -61,6 +67,8 @@ public class DbProgressConfigurationComponent {
 
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
     }
+
+
 
     private void createJRadioButtons(ButtonGroup buttonGroup, List<Sprite> spriteList) {
         DbProgressbarState state = DbProgressbarState.getInstance();
