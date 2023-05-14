@@ -18,8 +18,6 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
     @SuppressWarnings("all")
     private final Color invisibleColor = new Color(0, 0, 0, 0);
-
-
     public DbzProgressBarUi(Sprite determinateSprite, Sprite inDeterminateSprite, int height) {
         this.determinateSprite = determinateSprite;
         this.inDeterminateSprite = inDeterminateSprite;
@@ -80,15 +78,17 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
         ImageIcon originalicon = imageIcon.getIcon();
 
+        int heightToUse = this.height / 2;
+
         double ratio = (double) originalicon.getIconHeight() / originalicon.getIconWidth();
 
-        int newWidth = (int) (this.height / ratio);
+        int newWidth = (int) (heightToUse / ratio);
 
         Image originalimage = originalicon.getImage();
         BufferedImage scaledImage = ImageUtil.createImage(newWidth, this.height, BufferedImage.TYPE_INT_ARGB);
 
         Graphics2D g = scaledImage.createGraphics();
-        g.drawImage(originalimage, 0, 0, newWidth, this.height, null);
+        g.drawImage(originalimage, 0, 0, newWidth, heightToUse, null);
         g.dispose();
 
         return new ImageIcon(scaledImage);
