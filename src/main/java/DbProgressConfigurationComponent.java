@@ -1,6 +1,4 @@
-import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBRadioButton;
-import com.intellij.ui.components.JBTextField;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -13,7 +11,7 @@ import java.util.stream.Collectors;
 public class DbProgressConfigurationComponent {
 
     private final Map<Sprite, Boolean> spriteState = new HashMap<>();
-    private final JBTextField heightField = new JBTextField();
+    private final JSlider slider = new JSlider();
     private JPanel mainPanel;
 
     public DbProgressConfigurationComponent() {
@@ -44,14 +42,18 @@ public class DbProgressConfigurationComponent {
         ButtonGroup determinateGroup = new ButtonGroup();
         ButtonGroup inDeterminateGroup = new ButtonGroup();
 
-        // todo looks like s...
-        JPanel heightPanel = new JPanel();
-        heightPanel.add(new JBLabel("Height:"));
+        mainPanel.add(new JLabel("Height:"));
+        JPanel heightPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        slider.setMinimum(20);
+        slider.setMaximum(50);
+        slider.setMajorTickSpacing(5);
+        slider.setMinorTickSpacing(1);
+        slider.createStandardLabels(1);
+        slider.setPaintTicks(true);
+        slider.setPaintLabels(true);
+        slider.setValue(state.getProgressbarHeight());
+        heightPanel.add(slider);
 
-        this.heightField.setText(state.getProgressbarHeight().toString());
-
-        heightPanel.add(this.heightField);
-        heightPanel.setLayout(new FlowLayout());
         mainPanel.add(heightPanel);
 
         mainPanel.add(new JLabel("Determinate Sprites:"));
@@ -67,7 +69,6 @@ public class DbProgressConfigurationComponent {
 
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
     }
-
 
 
     private void createJRadioButtons(ButtonGroup buttonGroup, List<Sprite> spriteList) {

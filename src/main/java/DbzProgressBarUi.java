@@ -78,7 +78,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
 
         ImageIcon originalicon = imageIcon.getIcon();
 
-        int heightToUse = this.height / 2;
+        int heightToUse = this.height;
 
         double ratio = (double) originalicon.getIconHeight() / originalicon.getIconWidth();
 
