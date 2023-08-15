@@ -25,6 +25,11 @@ public class DbProgressbarConfigurable implements Configurable {
     @Override
     public boolean isModified() {
         DbProgressbarState state = DbProgressbarState.getInstance();
+
+        if (!Integer.valueOf(component.getSlider().getValue()).equals(state.getProgressbarHeight())) {
+            return true;
+        }
+
         for (Sprite sprite : Sprite.values()) {
             Boolean componentValue = component.getSpriteState().get(sprite);
             Boolean stateValue = state.getSpriteState().get(sprite);
@@ -33,6 +38,7 @@ public class DbProgressbarConfigurable implements Configurable {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -43,5 +49,8 @@ public class DbProgressbarConfigurable implements Configurable {
             Boolean componentValue = component.getSpriteState().get(sprite);
             state.getSpriteState().put(sprite, componentValue);
         });
+
+        state.setProgressbarHeight(component.getSlider().getValue());
+
     }
 }

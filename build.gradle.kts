@@ -50,6 +50,6 @@ tasks {
     }
 
     publishPlugin {
-        token.set(properties("publishToken"))
+        token.set(project.findProperty("token") as String?)
     }
 }
