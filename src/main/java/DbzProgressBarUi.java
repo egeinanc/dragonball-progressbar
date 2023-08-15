@@ -1,13 +1,11 @@
 import com.intellij.ui.JBColor;
 import com.intellij.ui.scale.JBUIScale;
-import com.intellij.util.ui.ImageUtil;
 
 import javax.swing.*;
 import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
-import java.awt.image.BufferedImage;
 import java.net.URL;
 
 public class DbzProgressBarUi extends BasicProgressBarUI {
@@ -36,7 +34,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         boolean determinateIsSet = false;
         boolean inDeterminateIsSet = false;
         Sprite determinateSprite = Sprite.GOKU_JINDUJUN;
-        Sprite indeterminateSprite = Sprite.GOKU_KAMEHAMEHA_SMALL;
+        Sprite indeterminateSprite = Sprite.GOKU_FLYING;
 
         DbProgressbarState state = DbProgressbarState.getInstance();
         for (Sprite sprite : Sprite.values()) {
@@ -67,32 +65,14 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         progressBar.setForeground(new JBColor(invisibleColor, invisibleColor));
         paintBorder((Graphics2D) g);
 
-        ImageIcon imageIcon = scaleIconToHeight(inDeterminateSprite);
+        ImageIcon imageIcon = ScaleUtil.scaleIconToHeight(inDeterminateSprite, this.height);
         int yAxis = height > imageIcon.getIconHeight() ? (height - imageIcon.getIconHeight()) / 2 : 0;
 
         imageIcon.paintIcon(progressBar, g, 0, Math.round(yAxis));
 
     }
 
-    public ImageIcon scaleIconToHeight(Sprite imageIcon) {
 
-        ImageIcon originalicon = imageIcon.getIcon();
-
-        int heightToUse = this.height;
-
-        double ratio = (double) originalicon.getIconHeight() / originalicon.getIconWidth();
-
-        int newWidth = (int) (heightToUse / ratio);
-
-        Image originalimage = originalicon.getImage();
-        BufferedImage scaledImage = ImageUtil.createImage(newWidth, this.height, BufferedImage.TYPE_INT_ARGB);
-
-        Graphics2D g = scaledImage.createGraphics();
-        g.drawImage(originalimage, 0, 0, newWidth, heightToUse, null);
-        g.dispose();
-
-        return new ImageIcon(scaledImage);
-    }
 
     @Override
     protected void paintDeterminate(Graphics g, JComponent c) {
@@ -101,7 +81,7 @@ public class DbzProgressBarUi extends BasicProgressBarUI {
         progressBar.setForeground(new JBColor(invisibleColor, invisibleColor));
         paintBorder((Graphics2D) g);
 
-        ImageIcon imageIcon = scaleIconToHeight(determinateSprite);
+        ImageIcon imageIcon = ScaleUtil.scaleIconToHeight(determinateSprite, this.height);
         int amountFull = getAmountFull(progressBar.getInsets(), progressBar.getWidth(), progressBar.getHeight());
 
         int rightCornerPosition = amountFull - imageIcon.getIconWidth();

@@ -39,11 +39,45 @@ public class DbProgressConfigurationComponent {
     private void createUI() {
         DbProgressbarState state = DbProgressbarState.getInstance();
         mainPanel = new JPanel();
+
+        mainPanel.setLayout(null);
+
+
+        createSlider(state);
+        createSpriteList();
+    }
+
+    private void createSpriteList() {
+        JPanel listPanel = new JPanel();
+        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.PAGE_AXIS));
+
+        listPanel.setBounds(0, 60, 500, 1000);
+
+        listPanel.add(new JLabel("Determinate Sprites:"));
+
         ButtonGroup determinateGroup = new ButtonGroup();
         ButtonGroup inDeterminateGroup = new ButtonGroup();
 
-        mainPanel.add(new JLabel("Height:"));
-        JPanel heightPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        List<Sprite> determinateSprites = Arrays.stream(Sprite.values()).filter(Sprite::isDeterminate).collect(Collectors.toList());
+
+        createJRadioButtons(determinateGroup, determinateSprites, listPanel);
+
+        listPanel.add(new JLabel("Indeterminate Sprites:"));
+
+        List<Sprite> inDeterminateSprites = Arrays.stream(Sprite.values()).filter(sprite -> !sprite.isDeterminate()).collect(Collectors.toList());
+        createJRadioButtons(inDeterminateGroup, inDeterminateSprites, listPanel);
+
+        mainPanel.add(listPanel);
+
+    }
+
+    private void createSlider(DbProgressbarState state) {
+        JPanel heightPanel = new JPanel();
+
+        heightPanel.setBounds(0,0, 300, 50);
+
+        heightPanel.add(new JLabel("Height:"));
+
         slider.setMinimum(20);
         slider.setMaximum(50);
         slider.setMajorTickSpacing(5);
@@ -52,26 +86,14 @@ public class DbProgressConfigurationComponent {
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         slider.setValue(state.getProgressbarHeight());
+
         heightPanel.add(slider);
 
         mainPanel.add(heightPanel);
-
-        mainPanel.add(new JLabel("Determinate Sprites:"));
-
-        List<Sprite> determinateSprites = Arrays.stream(Sprite.values()).filter(Sprite::isDeterminate).collect(Collectors.toList());
-
-        createJRadioButtons(determinateGroup, determinateSprites);
-
-        mainPanel.add(new JLabel("Indeterminate Sprites:"));
-
-        List<Sprite> inDeterminateSprites = Arrays.stream(Sprite.values()).filter(sprite -> !sprite.isDeterminate()).collect(Collectors.toList());
-        createJRadioButtons(inDeterminateGroup, inDeterminateSprites);
-
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
     }
 
 
-    private void createJRadioButtons(ButtonGroup buttonGroup, List<Sprite> spriteList) {
+    private void createJRadioButtons(ButtonGroup buttonGroup, List<Sprite> spriteList, JPanel panel) {
         DbProgressbarState state = DbProgressbarState.getInstance();
 
         spriteList.forEach(sprite -> {
@@ -90,14 +112,14 @@ public class DbProgressConfigurationComponent {
 
             });
 
-            JLabel icon = new JLabel(sprite.getIcon());
+            JLabel icon = new JLabel(ScaleUtil.scaleIconToHeight(sprite, 50));
 
             buttonGroup.add(radioButton);
             iconPanel.add(radioButton);
             iconPanel.add(icon);
 
             iconPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-            mainPanel.add(iconPanel);
+            panel.add(iconPanel);
         });
     }
 }
