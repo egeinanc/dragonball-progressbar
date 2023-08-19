@@ -6,18 +6,16 @@ import java.awt.image.BufferedImage;
 
 public class ScaleUtil {
 
-    public static ImageIcon scaleIconToHeight(Sprite imageIcon, int height) {
+    public static ImageIcon scaleIconToHeight(Sprite imageIcon, int heightToUse) {
 
         ImageIcon originalicon = imageIcon.getIcon();
-
-        int heightToUse = height / 2;
 
         double ratio = (double) originalicon.getIconHeight() / originalicon.getIconWidth();
 
         int newWidth = (int) (heightToUse / ratio);
 
         Image originalimage = originalicon.getImage();
-        BufferedImage scaledImage = ImageUtil.createImage(newWidth, height, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage scaledImage = ImageUtil.createImage(newWidth, heightToUse, BufferedImage.TYPE_INT_ARGB);
 
         Graphics2D g = scaledImage.createGraphics();
         g.drawImage(originalimage, 0, 0, newWidth, heightToUse, null);
