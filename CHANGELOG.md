@@ -2,6 +2,8 @@
 
 # dragonball-progressbar Changelog
 
+## [Unreleased]
+
 ## [1.1.2]
 ### Added
 - fixed an issue where in some cases the sprite did not fit into the progressbar
