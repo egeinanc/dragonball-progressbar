@@ -33,6 +33,7 @@ In the preferences page there is a new entry to set the desired sprite.
 <div>
 <img src='src/main/resources/jindujun.png' width='300'>
 </div>
+
 ## Installation
 
 - Using IDE built-in plugin system:
