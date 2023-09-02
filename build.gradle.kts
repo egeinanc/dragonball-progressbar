@@ -6,7 +6,7 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.7.10"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.13.3"
+    id("org.jetbrains.intellij") version "1.15.0"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "1.3.1"
     // Gradle Qodana Plugin
@@ -29,7 +29,7 @@ dependencies {
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     pluginName.set("dragonball-progressbar")
-    version.set("2023.1")
+    version.set("2023.2")
     type.set("IC") // Target IDE Platform
 
     // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
@@ -39,7 +39,7 @@ intellij {
 
 tasks {
     patchPluginXml {
-        sinceBuild.set("222")
+        sinceBuild.set("232")
         untilBuild.set("232.*")
     }
 

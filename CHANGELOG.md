@@ -4,6 +4,10 @@
 
 ## [Unreleased]
 
+## [1.1.2]
+### Added
+- fixed an issue where in some cases the sprite did not fit into the progressbar
+
 ## [1.0.0]
 ### Added
 - Adjustable sprites with a dedicated entry in preferences view
