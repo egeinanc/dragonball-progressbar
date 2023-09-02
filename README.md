@@ -6,7 +6,8 @@
 
 This plugin is made for fun and is still WIP (05.01.2023).
 
-Sprites belong to: 
+Sprites belong to:
+
 * https://www.spriters-resource.com
 * https://www.deviantart.com/tag/gokusprites
 * https://slackmojis.com/
@@ -23,31 +24,27 @@ In the preferences page there is a new entry to set the desired sprite.
 
 ## Currently existing sprites
 
-![](src/main/resources/load_kamehameha.gif)
-
-
-![](src/main/resources/goku_ki.gif)
-
-![](src/main/resources/goku_kamehameha.gif)
-
-![](src/main/resources/vegeta_final_flash.gif)
-
-![](src/main/resources/jindujun.png)
-
-![](src/main/resources/kamehameha.gif)
-
-![](src/main/resources/goku_run.gif)
-
+<div>
+<img src='src/main/resources/goku_ki.gif' width='58'>
+</div>
+<div>
+<img src='src/main/resources/flying_goku.png' width='100'>
+</div>
+<div>
+<img src='src/main/resources/jindujun.png' width='300'>
+</div>
 ## Installation
 
 - Using IDE built-in plugin system:
 
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "dragonball-progressbar"</kbd> >
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "
+  dragonball-progressbar"</kbd> >
   <kbd>Install Plugin</kbd>
 
 - Manually:
 
-  Download the [latest release](https://github.com/egeinanc/dragonball-progressbar/releases/latest) and install it manually
+  Download the [latest release](https://plugins.jetbrains.com/plugin/19789-dragonball-progress-bar/versions) and install it
+  manually
   using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
