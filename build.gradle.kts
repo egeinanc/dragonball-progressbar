@@ -41,6 +41,7 @@ tasks {
     patchPluginXml {
         sinceBuild.set("232")
         untilBuild.set("232.*")
+        changeNotes.set("changenotes.html")
     }
 
     signPlugin {
