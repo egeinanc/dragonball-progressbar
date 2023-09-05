@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+## [1.1.3]
+### Added
+- included changenotes.html
+- modified documentation
+
 ## [1.1.2]
 ### Added
 - fixed an issue where in some cases the sprite did not fit into the progressbar
