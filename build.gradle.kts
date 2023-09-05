@@ -29,7 +29,7 @@ dependencies {
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     pluginName.set("dragonball-progressbar")
-    version.set("2023.2")
+    version.set("2023.1.2")
     type.set("IC") // Target IDE Platform
 
     // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
@@ -39,7 +39,7 @@ intellij {
 
 tasks {
     patchPluginXml {
-        sinceBuild.set("232")
+        sinceBuild.set("231")
         untilBuild.set("232.*")
         changeNotes.set(File("changenotes.html").readText())
     }
