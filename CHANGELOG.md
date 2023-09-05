@@ -8,6 +8,7 @@
 ### Added
 - included changenotes.html
 - modified documentation
+- support older version 2023.1.2
 
 ## [1.1.2]
 ### Added
