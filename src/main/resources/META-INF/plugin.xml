@@ -3,8 +3,7 @@
     <id>me.egeinanc.dbzprogressbar</id>
     <name>Dragonball Progress Bar</name>
     <vendor>egeinanc</vendor>
-    <description>This plugin replaces the progressbar with a dragonball themed progressbar. Feel free to leave GitHub issues :)
-        In the preferences page there is a new entry to set the desired sprite.</description>
+    <description>This plugin replaces the progressbar with a dragonball themed progressbar. Feel free to leave GitHub issues :)</description>
 
     <depends>com.intellij.modules.platform</depends>
 

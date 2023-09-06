@@ -1,11 +1,9 @@
 import com.intellij.ui.components.JBRadioButton;
-import lombok.Getter;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.List;
+import java.awt.Component;
 import java.util.*;
 import java.util.stream.Collectors;
+import javax.swing.*;
+import lombok.Getter;
 
 @Getter
 public class DbProgressConfigurationComponent {
@@ -43,7 +41,7 @@ public class DbProgressConfigurationComponent {
         mainPanel.setLayout(null);
 
 
-        createSlider(state);
+        createSlider(state.getProgressbarHeight());
         createSpriteList();
     }
 
@@ -71,7 +69,7 @@ public class DbProgressConfigurationComponent {
 
     }
 
-    private void createSlider(DbProgressbarState state) {
+    private void createSlider(int value) {
         JPanel heightPanel = new JPanel();
 
         heightPanel.setBounds(0,0, 300, 50);
@@ -85,7 +83,7 @@ public class DbProgressConfigurationComponent {
         slider.createStandardLabels(1);
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
-        slider.setValue(state.getProgressbarHeight());
+        slider.setValue(value);
 
         heightPanel.add(slider);
 
